@@ -8,8 +8,7 @@ class TIMESTAMP:
     consumption: float = 0.0
     price: float = 0.0
 
-def readTimestamps(Filename: str) -> list[TIMESTAMP]:
-    Timestamps: list[TIMESTAMP] = []
+def readTimestamps(Filename: str, Timestamps: list[TIMESTAMP]) -> None:
     with open(Filename, "r", encoding="UTF-8") as file:
         for Line in file:
             Row = Line.rstrip()
@@ -22,7 +21,7 @@ def readTimestamps(Filename: str) -> list[TIMESTAMP]:
             Timestamp.consumption = float(Columns[2])
             Timestamp.price = float(Columns[3])
             Timestamps.append(Timestamp)
-    return Timestamps
+    return None
 
 def displayTimestamps(Timestamps: list[TIMESTAMP]) -> None:
     print("Electricity usages:")
@@ -40,7 +39,8 @@ def main() -> None:
     print("Program starting.")
     Filename = input("Insert filename: ")
     print(f'Reading file "{Filename}".')
-    Timestamps = readTimestamps(Filename)
+    Timestamps: list[TIMESTAMP] = []
+    readTimestamps(Filename, Timestamps)
     displayTimestamps(Timestamps)
     print("Program ending.")
     return None
