@@ -24,7 +24,7 @@ def readTimestamps(Filename: str) -> list[TIMESTAMP]:
             Timestamps.append(Timestamp)
     return Timestamps
 
-def showTimestamps(Timestamps: list[TIMESTAMP]) -> None:
+def displayTimestamps(Timestamps: list[TIMESTAMP]) -> None:
     print("Electricity usages:")
     for Timestamp in Timestamps:
         Total = Timestamp.consumption * Timestamp.price
@@ -41,7 +41,7 @@ def main() -> None:
     Filename = input("Insert filename: ")
     print(f'Reading file "{Filename}".')
     Timestamps = readTimestamps(Filename)
-    showTimestamps(Timestamps)
+    displayTimestamps(Timestamps)
     print("Program ending.")
     return None
 
