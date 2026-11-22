@@ -30,7 +30,7 @@ def displayTimestamps(Timestamps: list[TIMESTAMP]) -> None:
     for Timestamp in Timestamps:
         Total = Timestamp.consumption * Timestamp.price
         print(
-            f"- {Timestamp.weekday} {Timestamp.hour}, "
+            f" - {Timestamp.weekday} {Timestamp.hour}, "
             f"price {Timestamp.price:.2f} €, "
             f"consumption {Timestamp.consumption:.2f} kWh, "
             f"total {Total:.2f} €"
