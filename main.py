@@ -15,6 +15,8 @@ def readTimestamps(Filename: str, Timestamps: list[TIMESTAMP]) -> None:
             if Row == "":
                 continue
             Columns = Row.split(DELIMITER)
+            if Columns[0].strip().lower() == "weekday":
+                continue
             Timestamp = TIMESTAMP()
             Timestamp.weekday = Columns[0]
             Timestamp.hour = Columns[1]
